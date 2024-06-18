@@ -39,7 +39,8 @@ public class ValidarLogin extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setMaxInactiveInterval(20000); // tiempo en segundos
                 session.setAttribute("user", nuser);
-                
+
+
                 if (esAdministrador == 1) {
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 } else {

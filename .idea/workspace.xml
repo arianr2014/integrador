@@ -10,46 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0c58730-a748-4f11-a252-c15affe27d42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entidades/cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entidades/detallePedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entidades/pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entidades/producto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entidades/usuarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/conexion/conexionBD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CerrarSesion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Controler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ErrorLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ValidarLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Clientes.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Pedidos.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Productos.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/consultar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/consultarPedido.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/consultarProducto.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/sitio.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/listar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/listarProductos.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/modificar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/modificarProducto.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nuevo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nuevoCliente.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nuevoPedido.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nuevoProducto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ValidarLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ValidarLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +59,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 10.1.24.executor": "Run",
     "Tomcat Server.Tomcat 9.0.89.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/AREYES/UTP/2024 - 1/Integrador I sistemas/spring/PryIntegraMaven/src/main/webapp/WEB-INF/lib",
@@ -321,12 +283,35 @@
       <updated>1718690142017</updated>
       <workItem from="1718690143125" duration="4959000" />
       <workItem from="1718713740107" duration="6109000" />
-      <workItem from="1718722528327" duration="11961000" />
+      <workItem from="1718722528327" duration="14619000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
