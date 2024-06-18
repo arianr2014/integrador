@@ -283,7 +283,7 @@
       <updated>1718690142017</updated>
       <workItem from="1718690143125" duration="4959000" />
       <workItem from="1718713740107" duration="6109000" />
-      <workItem from="1718722528327" duration="14619000" />
+      <workItem from="1718722528327" duration="15144000" />
     </task>
     <servers />
   </component>
@@ -301,7 +301,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

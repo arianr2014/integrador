@@ -41,6 +41,7 @@ public class ValidarLogin extends HttpServlet {
                 session.setAttribute("user", nuser);
 
 
+
                 if (esAdministrador == 1) {
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 } else {
