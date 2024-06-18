@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0c58730-a748-4f11-a252-c15affe27d42" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ValidarLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ValidarLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +58,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 10.1.24.executor": "Run",
     "Tomcat Server.Tomcat 9.0.89.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "areyes",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/AREYES/UTP/2024 - 1/Integrador I sistemas/spring/PryIntegraMaven/src/main/webapp/WEB-INF/lib",
@@ -283,7 +282,7 @@
       <updated>1718690142017</updated>
       <workItem from="1718690143125" duration="4959000" />
       <workItem from="1718713740107" duration="6109000" />
-      <workItem from="1718722528327" duration="15144000" />
+      <workItem from="1718722528327" duration="15411000" />
     </task>
     <servers />
   </component>
@@ -301,7 +300,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
