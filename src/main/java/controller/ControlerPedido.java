@@ -1,8 +1,7 @@
 package Controler;
 
-import Entidades.detallePedido;
-import Entidades.pedido;
-import Entidades.producto;
+import Entidades.*;
+import com.sun.tools.javac.util.Convert;
 import conexion.conexionBD;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,14 +11,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static java.lang.Integer.parseInt;
+
 @WebServlet(name = "ControlerPedido", urlPatterns = {"/ControlerPedido"})
 public class ControlerPedido extends HttpServlet {
+
+    cliente c = new cliente();
+    producto p = new producto();
+
+    Venta v = new Venta();
+    ArrayList<Venta> lista = new ArrayList<>();
+    int item;
+    int cod;
+    String descripcion;
+    double precio;
+    int cant;
+    double subtotal;
+    double totalPagar;
+
+    String numeroserie = "";
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -174,6 +192,7 @@ public class ControlerPedido extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
+        /*
         String accionbuscarProducto = request.getParameter("accionbuscarProducto");
         if (accion!=null && accion.equals("BuscarCliente")) {
             buscarCliente(request, response);
@@ -182,9 +201,9 @@ public class ControlerPedido extends HttpServlet {
         if (accionbuscarProducto.equals("BuscarProducto")) {
             buscarProducto(request, response);
 
-        }
+        }*/
 
-/*
+
         switch (accion) {
             case "BuscarCliente":
                 buscarCliente(request, response);
@@ -201,7 +220,7 @@ public class ControlerPedido extends HttpServlet {
             case "Cancelar":
                 cancelar(request, response);
                 break;
-        }*/
+        }
     }
 
     private void buscarCliente(HttpServletRequest request, HttpServletResponse response)
@@ -250,6 +269,16 @@ public class ControlerPedido extends HttpServlet {
             request.setAttribute("nombreProducto", descripcion);
             request.setAttribute("precio", precio);
             request.setAttribute("stock", stock);
+            producto pr = new producto();
+
+            pr.setId(rs.getString("Id_Prod"));
+            pr.setDescripcion(rs.getString("Descripcion"));
+            pr.setPrecio(rs.getFloat("precio"));
+            pr.setCosto(rs.getInt("stock"));
+            p=pr;
+            request.setAttribute("producto", p);
+
+
         } else {
             request.setAttribute("nombreProducto", "Producto no encontrado");
             request.setAttribute("precio", "");
@@ -272,6 +301,14 @@ public class ControlerPedido extends HttpServlet {
             throws ServletException, IOException {
         // Lógica para agregar producto al pedido
         // Ejemplo de cómo puedes manejar los datos aquí
+
+        totalPagar = 0.0;
+        item = item + 1;
+        cod =  parseInt( p.getId());
+        descripcion = request.getParameter("nomproducto");
+        precio = Double.parseDouble(request.getParameter("precio"));
+        cant = parseInt(request.getParameter("cant"));
+        subtotal = precio * cant;
     }
 
     private void generarVenta(HttpServletRequest request, HttpServletResponse response)
