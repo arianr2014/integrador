@@ -11,14 +11,7 @@
 <%
     List<cliente> Lista= (List<cliente>) request.getAttribute("Lista");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
-    <link rel="stylesheet" href="css/sitio.css">
-</head>
-<body>
+
 <jsp:include page="header.jsp" />
     <div class="barra">
         <h1>Modifica Clientes</h1>
@@ -73,6 +66,4 @@
         <input type="submit" name="modificar" value="Modificar"> 
     </form>
 </div>
-</body>
-</html>
-
+<jsp:include page="footer.jsp" />

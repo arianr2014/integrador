@@ -10,18 +10,7 @@
     java.util.Date fechaPedido = (java.util.Date) request.getAttribute("fechaPedido");
     String fechaPedidoStr = fechaPedido != null ? new java.text.SimpleDateFormat("dd/MM/yyyy").format(fechaPedido) : "Fecha no disponible";
 %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Consulta de Pedido</title>
 
-        <link rel="stylesheet" href="css/sitio.css">
-
-
-
-    </head>
-    <body>
     <jsp:include page="header.jsp" />
         <div class="barra">
             <h1>Consulta de Pedido</h1>
@@ -71,5 +60,4 @@
             </tbody>
         </table>
     </div>
-    </body>
-</html>
+<jsp:include page="footer.jsp" />

@@ -84,7 +84,8 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigocliente" class="form-control" placeholder="Código">
+                                    <input type="hidden" name="codigocliente" class="form-control" placeholder="Código">
+                                    <input type="text" name="DNI" class="form-control" placeholder="DNI" value="${c.getDNI()}">
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
                                 </div>
                                 <div class="col-sm-6">

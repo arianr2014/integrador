@@ -1,7 +1,7 @@
-package Controler;
+package controller;
 
 import Entidades.*;
-import com.sun.tools.javac.util.Convert;
+
 import conexion.conexionBD;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -62,7 +62,8 @@ public class ControlerPedido extends HttpServlet {
                 // Implementación para eliminar
                 break;
             case "Nuevo":
-                request.getRequestDispatcher("nuevoPedido.jsp").forward(request, response);
+                //request.getRequestDispatcher("nuevoPedido.jsp").forward(request, response);
+                request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                 break;
             case "Filtrar":
                 filtrarPedidos(request, response, conn, Lista);
@@ -76,6 +77,8 @@ public class ControlerPedido extends HttpServlet {
             String sql = "SELECT Id_Pedido, A.Id_Cliente, B.Apellidos, B.Nombres, A.Fecha, " +
                          "A.SubTotal, A.TotalVenta FROM t_pedido A " +
                          "INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente";
+
+
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -225,17 +228,24 @@ public class ControlerPedido extends HttpServlet {
 
     private void buscarCliente(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-    String codigoCliente = request.getParameter("codigocliente");
+    String _dni = request.getParameter("DNI");
     conexionBD conBD = new conexionBD();
     Connection conn = conBD.Connected();
     try {
-        String sql = "SELECT Nombres, Apellidos FROM t_cliente WHERE Id_Cliente = ?";
+        String sql = "SELECT Id_Cliente,Nombres, Apellidos FROM t_cliente WHERE DNI = ?";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1, codigoCliente);
+        ps.setString(1, _dni);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             String nombres = rs.getString("Nombres");
             String apellidos = rs.getString("Apellidos");
+            String Id_Cliente = rs.getString("Id_Cliente");
+            c= new cliente();
+            c.setId(Id_Cliente);
+            c.setNombres(nombres);
+            c.setApellidos(apellidos);
+            c.setDNI(_dni);
+            request.setAttribute("c", c);
             request.setAttribute("Nombres", nombres + " " + apellidos);
         } else {
             request.setAttribute("Nombres", "Cliente no encontrado");
@@ -258,7 +268,7 @@ public class ControlerPedido extends HttpServlet {
     conexionBD conBD = new conexionBD();
     Connection conn = conBD.Connected();
     try {
-        String sql = "SELECT Descripcion, Precio, Stock FROM t_producto WHERE Id_Prod = ?";
+        String sql = "SELECT Id_Prod, Descripcion, Precio, Stock FROM t_producto WHERE Id_Prod = ?";
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, codigoProducto);
         ResultSet rs = ps.executeQuery();
@@ -277,6 +287,7 @@ public class ControlerPedido extends HttpServlet {
             pr.setCosto(rs.getInt("stock"));
             p=pr;
             request.setAttribute("producto", p);
+            request.setAttribute("c", c);
 
 
         } else {

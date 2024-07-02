@@ -5,20 +5,7 @@
 <%
     List<producto> listaProductos = (List<producto>) request.getAttribute("listaProductos");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Modificar Producto</title>
-    <link rel="stylesheet" href="css/sitio.css">
-    <link rel="stylesheet" href="css/sitio.css">
-    <style>
 
-        
-
-    </style>
-</head>
-<body>
 <jsp:include page="header.jsp" />
     <div class="barra">
         <h1>Modificar Producto</h1>
@@ -53,5 +40,4 @@
         </table>
         <input type="submit" name="modificar" value="Modificar"> 
     </form>
-</body>
-</html>
+<jsp:include page="footer.jsp" />

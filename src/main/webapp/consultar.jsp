@@ -11,15 +11,7 @@
 <%
     List<cliente> Lista= (List<cliente>) request.getAttribute("Lista");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
-    <link rel="stylesheet" href="css/sitio.css">
 
-</head>
-<body>
 <jsp:include page="header.jsp" />
     <div class="barra">
         <h1>Consulta de Clientes</h1>
@@ -67,6 +59,4 @@
 
     </table>
 </div>
-
-</body>
-</html>
+<jsp:include page="footer.jsp" />

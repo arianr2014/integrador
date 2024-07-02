@@ -5,12 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
-    <link rel="stylesheet" href="css/sitio.css">
+
     <style>
 
 
@@ -37,8 +32,7 @@
             background-color: #AF8F6F;
         }
     </style>
-</head>
-<body>
+
     <%  
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");  
         if (session.getAttribute("user") == null) {
@@ -54,5 +48,4 @@
         <a href="ControlerProducto?op=Listar" class="enlace">Listar Productos</a>
         <a href="ControlerProducto?op=Nuevo" class="enlace">Nuevo Producto</a>
     </div>
-</body>
-</html>
+<jsp:include page="footer.jsp" />
