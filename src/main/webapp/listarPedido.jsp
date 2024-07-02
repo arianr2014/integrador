@@ -10,15 +10,7 @@
 <%
     List<pedido> Lista = (List<pedido>) request.getAttribute("Lista");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Listado de Pedidos</title>
-    <link rel="stylesheet" href="css/sitio.css">
 
-</head>
-<body>
 <jsp:include page="header.jsp" />
     <div class="barra">
         <h1>Listado de Pedidos</h1>
@@ -66,6 +58,5 @@
                </td>
             </tr>
         </c:forEach>
-    </table> 
-</body>
-</html>
+    </table>
+<jsp:include page="footer.jsp" />

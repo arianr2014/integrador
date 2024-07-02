@@ -7,12 +7,7 @@
 <%
     List<producto> listaProductos= (List<producto>) request.getAttribute("listaProductos");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Consulta de Productos</title>
-    <link rel="stylesheet" href="css/sitio.css">
+
     <style>
 
         
@@ -33,8 +28,11 @@
             background-color: #ddd; 
         }
     </style>
-</head>
-<body>
+
+
+<jsp:include page="header.jsp" />
+
+
     <div class="barra">
         <h1>Consulta de Productos</h1>
         <h1>Administrador</h1>
@@ -66,5 +64,4 @@
         </c:forEach>
     </table>
     </div>
-</body>
-</html>
+    <jsp:include page="footer.jsp" />

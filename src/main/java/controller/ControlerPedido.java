@@ -1,8 +1,7 @@
-package Controler;
+package controller;
 
-import Entidades.detallePedido;
-import Entidades.pedido;
-import Entidades.producto;
+import Entidades.*;
+
 import conexion.conexionBD;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,14 +11,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static java.lang.Integer.parseInt;
+
 @WebServlet(name = "ControlerPedido", urlPatterns = {"/ControlerPedido"})
 public class ControlerPedido extends HttpServlet {
+
+    cliente c = new cliente();
+    producto p = new producto();
+
+    Venta v = new Venta();
+    ArrayList<Venta> lista = new ArrayList<>();
+    int item;
+    int cod;
+    String descripcion;
+    double precio;
+    int cant;
+    double subtotal;
+    double totalPagar;
+
+    String numeroserie = "";
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -44,7 +62,8 @@ public class ControlerPedido extends HttpServlet {
                 // Implementación para eliminar
                 break;
             case "Nuevo":
-                request.getRequestDispatcher("nuevoPedido.jsp").forward(request, response);
+                //request.getRequestDispatcher("nuevoPedido.jsp").forward(request, response);
+                request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                 break;
             case "Filtrar":
                 filtrarPedidos(request, response, conn, Lista);
@@ -58,6 +77,8 @@ public class ControlerPedido extends HttpServlet {
             String sql = "SELECT Id_Pedido, A.Id_Cliente, B.Apellidos, B.Nombres, A.Fecha, " +
                          "A.SubTotal, A.TotalVenta FROM t_pedido A " +
                          "INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente";
+
+
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -174,6 +195,7 @@ public class ControlerPedido extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
+        /*
         String accionbuscarProducto = request.getParameter("accionbuscarProducto");
         if (accion!=null && accion.equals("BuscarCliente")) {
             buscarCliente(request, response);
@@ -182,9 +204,9 @@ public class ControlerPedido extends HttpServlet {
         if (accionbuscarProducto.equals("BuscarProducto")) {
             buscarProducto(request, response);
 
-        }
+        }*/
 
-/*
+
         switch (accion) {
             case "BuscarCliente":
                 buscarCliente(request, response);
@@ -201,22 +223,29 @@ public class ControlerPedido extends HttpServlet {
             case "Cancelar":
                 cancelar(request, response);
                 break;
-        }*/
+        }
     }
 
     private void buscarCliente(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-    String codigoCliente = request.getParameter("codigocliente");
+    String _dni = request.getParameter("DNI");
     conexionBD conBD = new conexionBD();
     Connection conn = conBD.Connected();
     try {
-        String sql = "SELECT Nombres, Apellidos FROM t_cliente WHERE Id_Cliente = ?";
+        String sql = "SELECT Id_Cliente,Nombres, Apellidos FROM t_cliente WHERE DNI = ?";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1, codigoCliente);
+        ps.setString(1, _dni);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             String nombres = rs.getString("Nombres");
             String apellidos = rs.getString("Apellidos");
+            String Id_Cliente = rs.getString("Id_Cliente");
+            c= new cliente();
+            c.setId(Id_Cliente);
+            c.setNombres(nombres);
+            c.setApellidos(apellidos);
+            c.setDNI(_dni);
+            request.setAttribute("c", c);
             request.setAttribute("Nombres", nombres + " " + apellidos);
         } else {
             request.setAttribute("Nombres", "Cliente no encontrado");
@@ -239,7 +268,7 @@ public class ControlerPedido extends HttpServlet {
     conexionBD conBD = new conexionBD();
     Connection conn = conBD.Connected();
     try {
-        String sql = "SELECT Descripcion, Precio, Stock FROM t_producto WHERE Id_Prod = ?";
+        String sql = "SELECT Id_Prod, Descripcion, Precio, Stock FROM t_producto WHERE Id_Prod = ?";
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, codigoProducto);
         ResultSet rs = ps.executeQuery();
@@ -250,6 +279,17 @@ public class ControlerPedido extends HttpServlet {
             request.setAttribute("nombreProducto", descripcion);
             request.setAttribute("precio", precio);
             request.setAttribute("stock", stock);
+            producto pr = new producto();
+
+            pr.setId(rs.getString("Id_Prod"));
+            pr.setDescripcion(rs.getString("Descripcion"));
+            pr.setPrecio(rs.getFloat("precio"));
+            pr.setCosto(rs.getInt("stock"));
+            p=pr;
+            request.setAttribute("producto", p);
+            request.setAttribute("c", c);
+
+
         } else {
             request.setAttribute("nombreProducto", "Producto no encontrado");
             request.setAttribute("precio", "");
@@ -272,6 +312,14 @@ public class ControlerPedido extends HttpServlet {
             throws ServletException, IOException {
         // Lógica para agregar producto al pedido
         // Ejemplo de cómo puedes manejar los datos aquí
+
+        totalPagar = 0.0;
+        item = item + 1;
+        cod =  parseInt( p.getId());
+        descripcion = request.getParameter("nomproducto");
+        precio = Double.parseDouble(request.getParameter("precio"));
+        cant = parseInt(request.getParameter("cant"));
+        subtotal = precio * cant;
     }
 
     private void generarVenta(HttpServletRequest request, HttpServletResponse response)

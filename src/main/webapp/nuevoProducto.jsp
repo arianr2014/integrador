@@ -1,19 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Agregar Producto</title>
-    <link rel="stylesheet" href="css/sitio.css">
-    <style>
 
-
-
-    </style>
-</head>
-<body>
 <jsp:include page="header.jsp" />
     <div class="barra">
         <h1>Agregar Producto</h1>
@@ -48,5 +36,4 @@
         <input type="submit" name="agregar" value="Agregar"> 
     </form>
 </div>
-</body>
-</html>
+<jsp:include page="footer.jsp" />

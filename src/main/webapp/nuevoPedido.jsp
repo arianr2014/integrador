@@ -84,7 +84,8 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigocliente" class="form-control" placeholder="Código">
+                                    <input type="hidden" name="codigocliente" class="form-control" placeholder="Código">
+                                    <input type="text" name="DNI" class="form-control" placeholder="DNI" value="${c.getDNI()}">
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
                                 </div>
                                 <div class="col-sm-6">
@@ -97,7 +98,7 @@
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
                                     <input type="text" name="codigoProducto" class="form-control" placeholder="Código">
-                                    <input type="submit"  name="accionbuscarProducto" value="BuscarProducto" class="btn btn-outline-info">
+                                    <input type="submit"  name="accion" value="BuscarProducto" class="btn btn-outline-info">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" name="nombreProducto" class="form-control" placeholder="Producto" value="<%= request.getAttribute("nombreProducto") != null ? request.getAttribute("nombreProducto") : "" %>">
