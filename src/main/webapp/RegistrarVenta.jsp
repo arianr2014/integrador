@@ -5,9 +5,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     List<Venta> lista = (List<Venta>) request.getAttribute("lista");
+    String nserie = (String)request.getAttribute("nserie");
+    String mostrarmensajeok=(String)request.getAttribute("mostrarmensajeok");
 %>
 <jsp:include page="header.jsp" />
 <div class="container-fluid mt-4">
+    <div class="barra">
+        <h1>Registro de Venta</h1>
+        <h1>Administrador</h1>
+    </div>
+
     <div class="row">
         <div class="col-lg-5 parte01">
             <div class="card">
@@ -20,11 +27,41 @@
                         </div>
                         <div class="form-group d-flex">
                             <div class="col-sm-6 d-flex">
-                                <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
-                                <button type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">Buscar</button>
+                                <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo"> &nbsp;
+                                <button type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info form-control">Buscar</button>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Datos Cliente" class="form-control">
+                            </div>
+                        </div>
+
+                            <!--DATOS DEL COMPROBANTE-->
+                        <div class="form-group">
+                            <label>Tipo de Comprobante</label>
+                        </div>
+                        <div class="form-group d-flex">
+                            <div class="col-sm-8 d-flex">
+                                <select class="form-control" id="tipocomprobate" name="tipocomprobate" >
+                                    <option value="">Seleccionar tipo comprobate</option>
+                                    <option value="1">FACTURA</option>
+                                    <option value="2">BOLETA</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <!--DATOS DEL METODO PAGO-->
+                        <div class="form-group">
+                            <label>Forma de Pago</label>
+                        </div>
+                        <div class="form-group d-flex">
+                            <div class="col-sm-8 d-flex">
+                                <select class="form-control" id="metodopago" name="metodopago" >
+                                    <option value="">Seleccione método de pago</option>
+                                    <option value="Efectivo">Efectivo</option>
+                                    <option value="TC">Tarjeta Crédito</option>
+                                    <option value="TD">Tarjeta Débito</option>
+                                </select>
                             </div>
                         </div>
                         <!--DATOS DEL PRODUCTO-->
@@ -33,8 +70,8 @@
                         </div>
                         <div class="form-group d-flex">
                             <div class="col-sm-6 d-flex">
-                                <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo">
-                                <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
+                                <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo"> &nbsp;
+                                <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info form-control">Buscar</button>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" name="nomproducto" value="${producto.getNom()}" placeholder="Datos Producto" class="form-control">
@@ -103,7 +140,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer" >
+
+
                     <div class="row">
                         <div class="col-sm-6">
                             <a href="Controlador?menu=NuevaVenta&accion=GenerarVenta" class="btn btn-success">Generar Venta</a>
@@ -120,4 +158,46 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function()
+    {
+
+        // Obtener el valor de tipocomprobate desde la solicitud
+        var tipocomprobate = "<%= request.getAttribute("tipocomprobate") %>";
+        var metodopago = "<%= request.getAttribute("metodopago") %>";
+        console.log("tipocomprobate " + tipocomprobate);
+        console.log("metodopago " + metodopago);
+        // Seleccionar la opción correspondiente en el select
+
+            var selectElement = document.getElementById("tipocomprobate");
+            for (var i = 0; i < selectElement.options.length; i++) {
+                if (selectElement.options[i].value === tipocomprobate) {
+                    selectElement.selectedIndex = i;
+                    break;
+                }
+            }
+
+        var selectElement2 = document.getElementById("metodopago");
+        for (var i = 0; i < selectElement2.options.length; i++) {
+            if (selectElement2.options[i].value === metodopago) {
+                selectElement2.selectedIndex = i;
+                break;
+            }
+        }
+
+
+        //mostrarmensajeok
+        var mostrarmensajeok = "<%= request.getAttribute("mostrarmensajeok") %>";
+        if(mostrarmensajeok=="1"){
+
+            swal(" ¡Venta Realizada con Éxito..!!! ", {
+                icon: "success",
+            })
+        }
+    });
+
+
+</script>
 <jsp:include page="footer.jsp" />

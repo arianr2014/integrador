@@ -17,6 +17,7 @@ public class cliente {
     private String DNI;
     private String Telefono;
     private String Movil;
+    private String Email;
 
     public cliente() {
         this.Id="";
@@ -26,7 +27,18 @@ public class cliente {
         this.DNI="";
         this.Telefono="";
         this.Movil="";
+        this.Email="";
     }
+
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
 
     public String getId() {
         return Id;

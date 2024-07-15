@@ -37,6 +37,8 @@ $("tr #deleteItem").click(function (e) {
         }
     });
 });
+
+
 function eliminar(idp) {
     var url = "Controlador?menu=NuevaVenta&accion=delete&id=" + idp;
     console.log("hol");
@@ -49,13 +51,4 @@ function eliminar(idp) {
     });
 }
 
-//alert("Holaxd");
-//reporte("xd");
-//function reporte(accion){
 
-//console.log(accion);
-    //$get('../ControlerPedido?Op=Consultar&Id=P0002',function (r){
-
-    //console.log(JSON.stringify(r);
-  //  });
-//}

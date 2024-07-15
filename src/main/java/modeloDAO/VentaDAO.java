@@ -54,7 +54,7 @@ public class VentaDAO {
     }
 
     public int guardarVenta(Venta ve) {
-        String sql = "insert into ventas(IdCliente, IdEmpleado, NumeroSerie,FechaVentas,Monto, Estado)values(?,?,?,?,?,?)";
+        String sql = "insert into ventas(Id_Cliente, IdUsuario, NumeroSerie,FechaVentas,Monto, Estado,tipocomprobante,metodopago)values(?,?,?,?,?,?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -64,6 +64,8 @@ public class VentaDAO {
             ps.setString(4, ve.getFecha());
             ps.setDouble(5, ve.getMonto());
             ps.setString(6, ve.getEstado());
+            ps.setString(7, ve.getTipocomprobante());
+            ps.setString(8, ve.getMetodopago());
             ps.executeUpdate();
             ps.close();
             con.close();
@@ -75,7 +77,7 @@ public class VentaDAO {
     }
 
     public int guardarDetalleventas(Venta venta) {
-        String sql = "insert into detalle_ventas(IdVentas, IdProducto,Cantidad, PrecioVenta)values(?,?,?,?)";
+        String sql = "insert into detalle_ventas(IdVentas, Id_Prod,Cantidad, PrecioVenta)values(?,?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);

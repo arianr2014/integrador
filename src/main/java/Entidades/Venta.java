@@ -15,8 +15,29 @@ public class Venta {
     Double subtotal;
     Double monto;
     String estado;
+    String tipocomprobante;
+    String metodopago;
 
     public Venta() {
+    }
+
+
+
+    public String getMetodopago() {
+        return metodopago;
+    }
+
+    public void setMetodopago(String metodopago) {
+        this.metodopago = metodopago;
+    }
+
+
+    public String getTipocomprobante() {
+        return tipocomprobante;
+    }
+
+    public void setTipocomprobante(String tipocomprobante) {
+        this.tipocomprobante = tipocomprobante;
     }
 
     public Venta(Integer id, Integer item, Integer idcliente, Integer idempleado, Integer idproducto, String Numserie, String DescripcionP, String fecha, Double precio, Integer cantidad, Double subtotal, Double monto, String estado) {

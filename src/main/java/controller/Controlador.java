@@ -5,6 +5,8 @@ import config.GenerarSerie;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -15,8 +17,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import config.HtmlUtils;
 import modeloDTO.*;
 import modeloDAO.*;
+import sendemail.SendEmailUsingGMailSMTP;
 //import sendemail.SendEmailUsingGMailSMTP;
 
 
@@ -45,6 +50,11 @@ public class Controlador extends HttpServlet {
 
     String numeroserie = "";
     VentaDAO vdao = new VentaDAO();
+    String tipocomprobate="";
+    String metodopago="";
+    String tipocomprobateS;
+    String metodopagoS;
+    String mostrarmensajeok;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -205,7 +215,12 @@ public class Controlador extends HttpServlet {
 
 
         }
-        if (menu.equals("NuevaVenta")) {
+        if (menu.equals("NuevaVenta"))
+        {
+
+
+            mostrarmensajeok="0";
+
             switch (accion) {
                 case "BuscarCliente":
                     String dni = request.getParameter("codigocliente");
@@ -214,7 +229,17 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("c", c);
                     request.setAttribute("nserie", numeroserie);
                     session.setAttribute("usuario", usuario);
+
+                    tipocomprobate = request.getParameter("tipocomprobate");
+                    metodopago = request.getParameter("metodopago");
+                    tipocomprobateS=tipocomprobate;
+                    metodopagoS   =metodopago;
+                    request.setAttribute("tipocomprobate", tipocomprobate);
+                    request.setAttribute("metodopago", metodopago);
+
                     request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
+
+
                     break;
                 case "BuscarProducto":
                     String id = request.getParameter("codigoproducto");
@@ -225,6 +250,16 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("totalpagar", totalPagar);
                     request.setAttribute("nserie", numeroserie);
                     session.setAttribute("usuario", usuario);
+
+                    tipocomprobate = request.getParameter("tipocomprobate");
+                    metodopago = request.getParameter("metodopago");
+
+                    request.setAttribute("tipocomprobate", tipocomprobate);
+                    request.setAttribute("metodopago", metodopago);
+
+                    tipocomprobateS=tipocomprobate;
+                    metodopagoS   =metodopago;
+
                     request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                     break;
                 case "Agregar":
@@ -237,6 +272,16 @@ public class Controlador extends HttpServlet {
                     precio = Double.parseDouble(request.getParameter("precio"));
                     cant = Integer.parseInt(request.getParameter("cant"));
                     subtotal = precio * cant;
+
+                    tipocomprobate = request.getParameter("tipocomprobate");
+                    metodopago = request.getParameter("metodopago");
+
+                    request.setAttribute("tipocomprobate", tipocomprobate);
+                    request.setAttribute("metodopago", metodopago);
+
+                    tipocomprobateS=tipocomprobate;
+                    metodopagoS   =metodopago;
+
                     v = new Venta();
                     v.setItem(item);
                     v.setIdproducto(cod);
@@ -244,6 +289,8 @@ public class Controlador extends HttpServlet {
                     v.setPrecio(precio);
                     v.setCantidad(cant);
                     v.setSubtotal(subtotal);
+                    v.setTipocomprobante(tipocomprobateS);
+                    v.setMetodopago(metodopagoS);
 
                     boolean exist = false;
                     int count = 0;
@@ -323,23 +370,36 @@ public class Controlador extends HttpServlet {
                         int sac = pr.getStock() - cantidad;
                         aO.actualizarstock(idproducto, sac);
                     }
+                    // Obtener la fecha actual
+                    LocalDate fechaActual = LocalDate.now();
+
+                    // Definir el formato deseado
+                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+                    // Formatear la fecha
+                    String fechaFormateada = fechaActual.format(formato);
+
+
                     //Guardar Venta
                     v.setIdcliente(c.getId());
                     v.setIdempleado("admin");
                     v.setNumserie(numeroserie);
-                    v.setFecha("2019-06-14");
+                    v.setFecha(fechaFormateada);
                     v.setMonto(totalPagar);
                     v.setEstado("1");
+                    v.setTipocomprobante(tipocomprobateS);
+                    v.setMetodopago(metodopagoS);
+
                     int r = vdao.guardarVenta(v);
                     //Guardar Detalle ventas
                     int idv = Integer.parseInt(vdao.IdVentas());
                     for (int i = 0; i < lista.size(); i++) {
-                        v = new Venta();
-                        v.setId(idv);
-                        v.setIdproducto(lista.get(i).getIdproducto());
-                        v.setCantidad(lista.get(i).getCantidad());
-                        v.setPrecio(lista.get(i).getPrecio());
-                        r = vdao.guardarDetalleventas(v);
+                        Venta  vd = new Venta();
+                        vd.setId(idv);
+                        vd.setIdproducto(lista.get(i).getIdproducto());
+                        vd.setCantidad(lista.get(i).getCantidad());
+                        vd.setPrecio(lista.get(i).getPrecio());
+                        r = vdao.guardarDetalleventas(vd);
                     }
 
                     /*
@@ -349,8 +409,15 @@ public class Controlador extends HttpServlet {
                     } catch (IOException ex) {
                         Logger.getLogger(Imprimir.class.getName()).log(Level.SEVERE, null, ex);
                     }*/
+
+                    mostrarmensajeok="1";
+                    request.setAttribute("mostrarmensajeok", mostrarmensajeok);
+                    String sbody=HtmlUtils.generateHtmlContent(v, lista);
+                    SendEmailUsingGMailSMTP.sendEmail(c.getEmail(), "Venta Realizada con Éxito # " + v.getNumserie(), sbody);
                     lista = new ArrayList<>();
                     request.getRequestDispatcher("Controlador?menu=NuevaVenta&accion=ventanueva").forward(request, response);
+
+
                     System.out.println("Venta Realizada con Éxito..!!!:" + r);
                     break;
                 default:

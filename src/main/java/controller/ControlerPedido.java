@@ -53,6 +53,8 @@ public class ControlerPedido extends HttpServlet {
 
     String numeroserie = "";
 
+    String tipocomprobate="";
+    String metodopago="";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -201,8 +203,8 @@ public class ControlerPedido extends HttpServlet {
     private void listarPedidos(HttpServletRequest request, HttpServletResponse response, Connection conn, ArrayList<pedido> Lista)
             throws ServletException, IOException {
         try {
-            String sql = "SELECT Id_Pedido, A.Id_Cliente, B.Apellidos, B.Nombres, A.Fecha, " +
-                         "A.SubTotal, A.TotalVenta FROM t_pedido A " +
+            String sql = "SELECT IdVentas, A.Id_Cliente, B.Apellidos, B.Nombres, A.FechaVentas, " +
+                         "A.Monto, A.Monto FROM ventas A " +
                          "INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente";
 
 
@@ -239,9 +241,9 @@ public class ControlerPedido extends HttpServlet {
         try {
             String idPedido = request.getParameter("Id");
             // Consulta para obtener los detalles del pedido
-            String sqlDetalles = "SELECT Id_Pedido, A.Id_Prod, Descripcion, A.Cantidad, A.Precio, TotalDeta FROM t_detalle_pedido A " +
+            String sqlDetalles = "SELECT IdVentas, A.Id_Prod, Descripcion, A.Cantidad,B.precio ,A.PrecioVenta FROM detalle_ventas A " +
                                 "INNER JOIN t_producto B ON A.Id_Prod = B.Id_Prod " +
-                                "WHERE Id_Pedido = ?";
+                                "WHERE IdVentas = ?";
             PreparedStatement psDetalles = conn.prepareStatement(sqlDetalles);
             psDetalles.setString(1, idPedido);
             ResultSet rsDetalles = psDetalles.executeQuery();
@@ -258,18 +260,26 @@ public class ControlerPedido extends HttpServlet {
             }
 
             // Obtener el nombre del cliente basado en el ID de pedido
-            String sqlCliente = "SELECT B.Apellidos, B.Nombres FROM t_pedido A INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente WHERE A.Id_Pedido = ?";
+            String sqlCliente = "SELECT B.Apellidos, B.Nombres, A.FechaVentas, A.tipocomprobante  as TipoComprobante, A.metodopago as MetodoPago  FROM ventas A INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente WHERE A.IdVentas = ?";
             PreparedStatement psCliente = conn.prepareStatement(sqlCliente);
             psCliente.setString(1, idPedido);
             ResultSet rsCliente = psCliente.executeQuery();
             String nombreCliente = "";
+            String fecha="";
+
             if (rsCliente.next()) {
                 nombreCliente = rsCliente.getString("Nombres") + " " + rsCliente.getString("Apellidos");
+                fecha= rsCliente.getString("FechaVentas");
+                tipocomprobate= rsCliente.getString("TipoComprobante");
+                metodopago= rsCliente.getString("MetodoPago");
             }
 
             request.setAttribute("Lista", ListaDet);
             request.setAttribute("nombreCliente", nombreCliente);
+            request.setAttribute("fechaVenta", fecha);
             request.setAttribute("idPedido", idPedido);
+            request.setAttribute("tipocomprobate", tipocomprobate);
+            request.setAttribute("metodopago", metodopago);
             request.getRequestDispatcher("consultarPedido.jsp").forward(request, response);
 
         } catch (SQLException ex) {

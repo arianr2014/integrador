@@ -10,6 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0c58730-a748-4f11-a252-c15affe27d42" name="Changes" comment="">
+
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/HtmlUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/Venta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/Venta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDAO/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDAO/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDAO/ProductoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDAO/ProductoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDAO/VentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDAO/VentaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDTO/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDTO/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDTO/Venta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDTO/Venta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/consultarPedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/consultarPedido.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/funciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/funciones.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/nuevoCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/nuevoCliente.jsp" afterDir="false" />
+
       <change afterPath="$PROJECT_DIR$/src/main/java/Entidades/imprimirPedido.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/reportes/check.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/reportes/logoAlexanderStore.png" afterDir="false" />
@@ -20,15 +44,10 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/reportesJASPER/logoAlexanderStore.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/reportesJASPER/xd.jasper" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/reportesJASPER/xd.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/detallePedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/detallePedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/funciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/funciones.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" afterDir="false" />
+      
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +107,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Smart Tomcat.Tomcat: PryIntegraMaven.executor&quot;: &quot;Run&quot;,
@@ -97,7 +120,11 @@
     &quot;git-widget-placeholder&quot;: &quot;Gianfranco&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Arian/.m2/repository/javax/mail/javax.mail-api/1.6.2/javax.mail-api-1.6.2.jar&quot;,
+
     &quot;last_opened_file_path&quot;: &quot;/home/gianfranco/Escritorio/UTP CICLO 7/IntegradorUtp/integrador/src/main/webapp/reportesJASPER&quot;,
+
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -106,8 +133,13 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+
+    &quot;project.structure.side.proportion&quot;: &quot;0.3632184&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -344,6 +376,12 @@
       <workItem from="1719680663389" duration="1758000" />
       <workItem from="1719682449426" duration="12293000" />
       <workItem from="1719864916223" duration="1099000" />
+      <workItem from="1720018979375" duration="695000" />
+      <workItem from="1720100935259" duration="3000" />
+      <workItem from="1720235182352" duration="1276000" />
+      <workItem from="1720643302637" duration="656000" />
+      <workItem from="1720885608226" duration="23862000" />
+      <workItem from="1720981855806" duration="1391000" />
     </task>
     <servers />
   </component>
@@ -382,21 +420,56 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerProducto.java</url>
           <line>36</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/modeloDAO/ClienteDAO.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/modeloDAO/VentaDAO.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/modeloDAO/VentaDAO.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/modeloDAO/ProductoDAO.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="54" />
+
           <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
           <line>50</line>
           <option name="timeStamp" value="13" />
@@ -410,17 +483,45 @@
           <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
           <line>268</line>
           <option name="timeStamp" value="23" />
+
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java</url>
+          <line>189</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java</url>
+          <line>251</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java</url>
+          <line>249</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/config/HtmlUtils.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/config/HtmlUtils.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
-          <line>230</line>
-          <option name="timeStamp" value="24" />
+          <line>389</line>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp</url>
-          <line>84</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
+
       </breakpoints>
     </breakpoint-manager>
   </component>

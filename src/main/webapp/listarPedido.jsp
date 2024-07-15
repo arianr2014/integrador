@@ -23,7 +23,11 @@
         <div class="col-md-6">
         </div>
         <div class="col-md-6 text-right">
-            <a href="ControlerPedido?Op=Nuevo" class="btn btn-primary">Nuevo</a>
+
+
+            <a href="Controlador?menu=NuevaVenta&accion=nuevo" class="btn btn-primary">Generar Venta</a>
+
+
         </div>
     </div>
 

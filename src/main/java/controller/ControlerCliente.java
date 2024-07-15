@@ -63,6 +63,7 @@ public class ControlerCliente extends HttpServlet {
                         client.setDireccion(rs.getString("Direccion"));
                         client.setTelefono(rs.getString("Telefono"));
                         client.setMovil(rs.getString("Movil"));
+                        client.setEmail(rs.getString("Email"));
                         Lista.add(client);
                     }
                     request.setAttribute("Lista", Lista);
@@ -89,6 +90,8 @@ public class ControlerCliente extends HttpServlet {
                         client.setDireccion(rs.getString("Direccion"));
                         client.setTelefono(rs.getString("Telefono"));
                         client.setMovil(rs.getString("Movil"));
+                        client.setEmail(rs.getString("Email"));
+
                         Lista.add(client);
                     }
                     request.setAttribute("Lista", Lista);
@@ -115,6 +118,7 @@ public class ControlerCliente extends HttpServlet {
                         client.setDireccion(rs.getString("Direccion"));
                         client.setTelefono(rs.getString("Telefono"));
                         client.setMovil(rs.getString("Movil"));
+                        client.setEmail(rs.getString("Email"));
                         Lista.add(client);
                     }
                     request.setAttribute("Lista", Lista);
@@ -181,7 +185,8 @@ public class ControlerCliente extends HttpServlet {
         String DNI=request.getParameter("DNI");
         String Direccion=request.getParameter("direccion"); 
         String Telefono=request.getParameter("telefono"); 
-        String Movil=request.getParameter("movil"); 
+        String Movil=request.getParameter("movil");
+        String Email=request.getParameter("email");
         cliente client=new cliente();
         
         client.setId(Id);
@@ -190,7 +195,8 @@ public class ControlerCliente extends HttpServlet {
         client.setDNI(DNI);
         client.setDireccion(Direccion);
         client.setTelefono(Telefono);
-        client.setMovil(Movil);     
+        client.setMovil(Movil);
+        client.setEmail(Email);
         
         conexionBD conBD = new conexionBD();
         Connection conn = conBD.Connected();
@@ -198,7 +204,7 @@ public class ControlerCliente extends HttpServlet {
         ResultSet rs;        
         if(Id.isEmpty()){
             String sql_new="select max(Id_Cliente) Id_Cliente from t_cliente";
-            String sql="insert into t_cliente(Id_Cliente, apellidos, nombres, DNI, direccion, telefono, movil) values(?, ?, ?, ?, ?, ?, ?)";
+            String sql="insert into t_cliente(Id_Cliente, apellidos, nombres, DNI, direccion, telefono, movil, Email) values(?, ?, ?, ?, ?, ?, ?,?)";
 
             try{
                 /*Algoritmo para autogeneral el código*/
@@ -219,6 +225,7 @@ public class ControlerCliente extends HttpServlet {
                 ps.setString(5, client.getDireccion());
                 ps.setString(6, client.getTelefono());
                 ps.setString(7, client.getMovil());
+                ps.setString(8, client.getEmail());
                 
                 ps.executeUpdate(); 
             }catch(SQLException ex){
@@ -227,7 +234,7 @@ public class ControlerCliente extends HttpServlet {
                 conBD.Discconet();
             }               
         }else{
-            String sql="update t_cliente set apellidos=?, nombres=?, DNI=?, direccion=?, telefono=?, movil=? where Id_Cliente=?";
+            String sql="update t_cliente set apellidos=?, nombres=?, DNI=?, direccion=?, telefono=?, movil=? , Email=? where Id_Cliente=?";
 
             try{
                 ps= conn.prepareStatement(sql);
@@ -237,7 +244,9 @@ public class ControlerCliente extends HttpServlet {
                 ps.setString(4, client.getDireccion());
                 ps.setString(5, client.getTelefono());
                 ps.setString(6, client.getMovil());
-                ps.setString(7, client.getId());
+                ps.setString(7, client.getEmail());
+                ps.setString(8, client.getId());
+
                 ps.executeUpdate(); 
             }catch(SQLException ex){
                 System.out.println("Error actualizando tabla..."+ex.getMessage());

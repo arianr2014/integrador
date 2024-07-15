@@ -38,7 +38,11 @@
                     <tr>
                         <td>Móvil</td>
                         <td><input type="text" name="movil"></td>
-                    </tr>                 
+                    </tr>
+                <tr>
+                    <td>Mail</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
             </table>
             <br/>
             <input type="submit" name="modificar" value="Grabar">
