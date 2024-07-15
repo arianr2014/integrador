@@ -11,5 +11,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script src="js/funciones.js" type="text/javascript"></script>
+<script src="js/reporte.js" type="text/javascript"></script>
+
 </body>
 </html>

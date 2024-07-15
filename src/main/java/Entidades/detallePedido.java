@@ -15,6 +15,8 @@ public class detallePedido {
     private String Descripcion;
     private double Cantidad;
     private double Precio;
+    private double igv;
+
     private double TotalDeta;
 
     public detallePedido() {
@@ -73,5 +75,11 @@ public class detallePedido {
     public void setTotalDeta(double TotalDeta) {
         this.TotalDeta = TotalDeta;
     }
-    
+    public double getIgv(){
+        return (this.Precio * 18)/100;
+    }
+
+    public void setIgv(double igv) {
+        this.igv = igv;
+    }
 }

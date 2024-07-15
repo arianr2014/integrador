@@ -15,6 +15,7 @@
 <div class="barra">
     <h1>Menú Principal</h1>
     <h1>Administrador</h1>
+
+    <jsp:include page="footer.jsp" />
 </div>
 
-<jsp:include page="footer.jsp" />

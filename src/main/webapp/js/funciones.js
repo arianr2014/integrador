@@ -1,3 +1,4 @@
+
 $("tr #Cant").click(function (e) {
     var idp = $(this).parent().find('#item1').val();
     var cantidad = $(this).parent().find('#Cant').val();
@@ -49,4 +50,5 @@ function eliminar(idp) {
         }
     });
 }
+
 

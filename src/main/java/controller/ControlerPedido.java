@@ -2,8 +2,18 @@ package controller;
 
 import Entidades.*;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import conexion.conexionBD;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
@@ -11,14 +21,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import static java.lang.Integer.parseInt;
+import static java.lang.System.out;
 
 @WebServlet(name = "ControlerPedido", urlPatterns = {"/ControlerPedido"})
 public class ControlerPedido extends HttpServlet {
@@ -70,8 +85,120 @@ public class ControlerPedido extends HttpServlet {
             case "Filtrar":
                 filtrarPedidos(request, response, conn, Lista);
                 break;
+            //IMPLEMENTACION DE PDF
+            case "exportarPdf":
+                exportarPDF(request, response);
+                break;
         }
     }
+
+    //IMPLEMENTACION DE PDF
+    private void exportarPDF(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+        ServletOutputStream out = response.getOutputStream();
+        conexionBD conBD = new conexionBD();
+        Connection conn = conBD.Connected();
+        try {
+            InputStream logoEmpresa = this.getServletConfig()
+                    .getServletContext()
+                    .getResourceAsStream("reportesJASPER/logoAlexanderStore.png"),
+                    logoFooter = this.getServletConfig()
+                            .getServletContext()
+                            .getResourceAsStream("reportesJASPER/check.png"),
+                    reporteEmpleado = this.getServletConfig()
+                            .getServletContext()
+                            .getResourceAsStream("reportesJASPER/xd.jasper");
+            if (logoEmpresa == null) {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "El logo de la empresa no se encontró.");
+                return;
+            }
+
+            if (logoFooter == null) {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "El logo del pie de página no se encontró.");
+                return;
+            }
+
+            if (reporteEmpleado == null) {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "El reporte de empleado no se encontró.");
+                return;
+            }
+            if (logoEmpresa != null && logoFooter != null && reporteEmpleado != null) {
+
+                List<imprimirPedido> reportesEmpleados = new ArrayList<>();
+                reportesEmpleados= consultarPedido2(request,response,conn);
+
+
+
+                Gson gson = new Gson();
+                for (imprimirPedido pedido : reportesEmpleados) {
+                    System.out.println(gson.toJson(pedido));
+                }
+
+
+                JasperReport report = (JasperReport) JRLoader.loadObject(reporteEmpleado);
+
+
+                JRBeanArrayDataSource ds = new JRBeanArrayDataSource(reportesEmpleados.toArray());
+
+                System.out.println(ds);
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("ds", ds);
+                parameters.put("logoEmpresa", logoEmpresa);
+                parameters.put("imagenAlternativa", logoFooter);
+                response.setContentType("application/pdf");
+                response.addHeader("Content-disposition", "inline; filename=ReportesEmpleados.pdf");
+                JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, ds);
+                JasperExportManager.exportReportToPdfStream(jasperPrint, out);
+                out.flush();
+                out.close();
+            } else {
+                response.setContentType("text/plain");
+                out.println("no se pudo generar el reporte");
+                out.println("esto puede debrse a que la lista de datos no fue recibida o el archivo plantilla del reporte no se ha encontrado");
+                out.println("contacte a soporte");
+            }
+        } catch (Exception e) {
+            response.setContentType("text/plain");
+            out.print("ocurrió un error al intentar generar el reporte:" + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private List<imprimirPedido> consultarPedido2(HttpServletRequest request, HttpServletResponse response, Connection conn)
+            throws ServletException, IOException {
+        try {
+            ArrayList<imprimirPedido> ListaDet = new ArrayList<>();
+            String idPedido = request.getParameter("Id");
+            // Consulta para obtener los detalles del pedido
+            String sqlDetalles = "SELECT Id_Pedido, Descripcion, A.Cantidad, A.Precio, TotalDeta FROM t_detalle_pedido A " +
+                    "INNER JOIN t_producto B ON A.Id_Prod = B.Id_Prod " +
+                    "WHERE Id_Pedido = ?";
+            PreparedStatement psDetalles = conn.prepareStatement(sqlDetalles);
+            psDetalles.setString(1, idPedido);
+            ResultSet rsDetalles = psDetalles.executeQuery();
+            ListaDet.add(new imprimirPedido());
+
+            while (rsDetalles.next()) {
+
+                imprimirPedido det = new imprimirPedido();
+                det.setIdPedido(rsDetalles.getString(1));
+                det.setDescripcion(rsDetalles.getString(2));
+                det.setCantidad(rsDetalles.getDouble(3));
+                det.setPrecio(rsDetalles.getDouble(4));
+                det.setTotal(rsDetalles.getDouble(5));
+                det.setIgv((rsDetalles.getDouble(4)*18)/100);
+                ListaDet.add(det);
+            }
+
+            return ListaDet;
+
+        } catch (SQLException ex) {
+            out.println("Error de SQL..." + ex.getMessage());
+            return null;
+        }
+    }
+
+
+
 
     private void listarPedidos(HttpServletRequest request, HttpServletResponse response, Connection conn, ArrayList<pedido> Lista)
             throws ServletException, IOException {
@@ -97,7 +224,7 @@ public class ControlerPedido extends HttpServlet {
             request.setAttribute("Lista", Lista);
             request.getRequestDispatcher("listarPedido.jsp").forward(request, response);
         } catch (SQLException ex) {
-            System.out.println("Error de SQL..." + ex.getMessage());
+            out.println("Error de SQL..." + ex.getMessage());
         } finally {
             try {
                 conn.close();
@@ -106,6 +233,8 @@ public class ControlerPedido extends HttpServlet {
             }
         }
     }
+
+
 
     private void consultarPedido(HttpServletRequest request, HttpServletResponse response, Connection conn, ArrayList<detallePedido> ListaDet)
             throws ServletException, IOException {
@@ -154,7 +283,7 @@ public class ControlerPedido extends HttpServlet {
             request.getRequestDispatcher("consultarPedido.jsp").forward(request, response);
 
         } catch (SQLException ex) {
-            System.out.println("Error de SQL..." + ex.getMessage());
+            out.println("Error de SQL..." + ex.getMessage());
         } finally {
             try {
                 conn.close();
@@ -191,7 +320,7 @@ public class ControlerPedido extends HttpServlet {
             request.setAttribute("Lista", Lista);
             request.getRequestDispatcher("listarPedido.jsp").forward(request, response);
         } catch (SQLException ex) {
-            System.out.println("Error de SQL..." + ex.getMessage());
+            out.println("Error de SQL..." + ex.getMessage());
         } finally {
             try {
                 conn.close();
@@ -262,7 +391,7 @@ public class ControlerPedido extends HttpServlet {
         }
         request.getRequestDispatcher("nuevoPedido.jsp").forward(request, response);
     } catch (SQLException ex) {
-        System.out.println("Error de SQL..." + ex.getMessage());
+        out.println("Error de SQL..." + ex.getMessage());
     } finally {
         try {
             conn.close();
@@ -307,7 +436,7 @@ public class ControlerPedido extends HttpServlet {
         }
         request.getRequestDispatcher("nuevoPedido.jsp").forward(request, response);
     } catch (SQLException ex) {
-        System.out.println("Error de SQL..." + ex.getMessage());
+        out.println("Error de SQL..." + ex.getMessage());
     } finally {
         try {
             conn.close();

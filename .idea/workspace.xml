@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0c58730-a748-4f11-a252-c15affe27d42" name="Changes" comment="">
+
       <change afterPath="$PROJECT_DIR$/src/main/java/config/HtmlUtils.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -27,10 +28,26 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/consultarPedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/consultarPedido.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/funciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/funciones.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/modificar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/nuevoCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/nuevoCliente.jsp" afterDir="false" />
+
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entidades/imprimirPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reportes/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reportes/logoAlexanderStore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reportes/xd.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reportes/xd.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/reporte.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/reportesJASPER/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/reportesJASPER/logoAlexanderStore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/reportesJASPER/xd.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/reportesJASPER/xd.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/detallePedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/detallePedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/pedido.java" afterDir="false" />
+      
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +64,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gian247&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/arianr2014/integrador.git&quot;,
+    &quot;accountId&quot;: &quot;13202ab2-bdda-491b-8d61-5c66475f3369&quot;
+  }
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -80,12 +114,17 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat: PryIntegraMaven.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 10.1.24.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 9.0.89.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;areyes&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Gianfranco&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Arian/.m2/repository/javax/mail/javax.mail-api/1.6.2/javax.mail-api-1.6.2.jar&quot;,
+
+    &quot;last_opened_file_path&quot;: &quot;/home/gianfranco/Escritorio/UTP CICLO 7/IntegradorUtp/integrador/src/main/webapp/reportesJASPER&quot;,
+
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -94,23 +133,31 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+
     &quot;project.structure.side.proportion&quot;: &quot;0.3632184&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/reportesJASPER" />
+      <recent name="$PROJECT_DIR$/src/main/reportes" />
       <recent name="D:\AREYES\UTP\2024 - 1\Integrador I sistemas\spring\PryIntegraMaven\src\main\webapp\js" />
       <recent name="D:\AREYES\UTP\2024 - 1\Integrador I sistemas\spring\PryIntegraMaven\src\main\webapp\WEB-INF\lib" />
       <recent name="D:\AREYES\UTP\2024 - 1\Integrador I sistemas\spring\PryIntegraMaven\src\main\java\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="D:\AREYES\UTP\2024 - 1\Integrador I sistemas\spring\PryIntegraMaven\src\main\webapp\WEB-INF\lib" />
       <recent name="D:\AREYES\UTP\2024 - 1\Integrador I sistemas\spring\PryIntegraMaven\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.89">
+  <component name="RunManager" selected="Smart Tomcat.Tomcat: PryIntegraMaven">
     <configuration name="Tomcat 10.1.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -285,18 +332,32 @@
         </option>
       </method>
     </configuration>
+    <configuration name="Tomcat: PryIntegraMaven" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="" />
+      <option name="contextPath" value="/PryIntegraMaven" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/8.5.100" />
+          <option name="path" value="$USER_HOME$/Vídeos/apache-tomcat-8.5.100" />
+          <option name="version" value="8.5.100.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="PryIntegraMaven" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 10.1.24" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.89" />
+      <item itemvalue="Smart Tomcat.Tomcat: PryIntegraMaven" />
     </list>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -338,7 +399,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/areyes" />
+                        <option value="Gianfranco" />
                       </list>
                     </value>
                   </entry>
@@ -379,6 +440,7 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
           <line>112</line>
           <option name="timeStamp" value="39" />
@@ -407,6 +469,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
           <line>42</line>
           <option name="timeStamp" value="54" />
+
+          <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/modeloDAO/ClienteDAO.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
+          <line>268</line>
+          <option name="timeStamp" value="23" />
+
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java</url>
@@ -423,6 +500,7 @@
           <line>249</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
+
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
           <line>29</line>
@@ -443,6 +521,7 @@
           <line>389</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
+
       </breakpoints>
     </breakpoint-manager>
   </component>
