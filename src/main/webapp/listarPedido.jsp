@@ -53,6 +53,7 @@
                <td>${campo.getNombres()}</td>
                <td>${campo.getTotalVenta()}</td>
                <td>
+                   <a href="ControlerPedido?Op=exportarPdf&Id=${campo.getId_Pedido()}">PDF</a>
                    <a href="ControlerPedido?Op=Consultar&Id=${campo.getId_Pedido()}">Consultar</a>
                    <a href="ControlerPedido?Op=Eliminar&Id=${campo.getId_Pedido()}">Eliminar</a>
                </td>

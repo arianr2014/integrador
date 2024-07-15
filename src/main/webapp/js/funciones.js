@@ -1,3 +1,4 @@
+
 $("tr #Cant").click(function (e) {
     var idp = $(this).parent().find('#item1').val();
     var cantidad = $(this).parent().find('#Cant').val();
@@ -47,3 +48,14 @@ function eliminar(idp) {
         }
     });
 }
+
+//alert("Holaxd");
+//reporte("xd");
+//function reporte(accion){
+
+//console.log(accion);
+    //$get('../ControlerPedido?Op=Consultar&Id=P0002',function (r){
+
+    //console.log(JSON.stringify(r);
+  //  });
+//}

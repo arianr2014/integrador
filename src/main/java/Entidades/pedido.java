@@ -85,5 +85,7 @@ public class pedido {
     public void setTotalVenta(double TotalVenta) {
         this.TotalVenta = TotalVenta;
     }
+
+
     
 }
