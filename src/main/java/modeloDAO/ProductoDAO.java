@@ -20,6 +20,7 @@ public class ProductoDAO {
     public Producto buscar(String id) {
         Producto p = new Producto();
         String sql = "select Id_Prod,Descripcion,precio,Stock,'1'  from t_producto where Id_Prod='" + id + "'";
+        String mensaje="";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -32,12 +33,13 @@ public class ProductoDAO {
                 p.setEstado(rs.getString(5));
             }
         } catch (Exception e) {
+            mensaje=e.getMessage();
         }
         return p;
     }
 
     public int actualizarstock(String id, int stock) {
-        String sql = "update producto set Stock=? where Id_Prod=?";
+        String sql = "update t_producto set Stock=? where Id_Prod=?";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);

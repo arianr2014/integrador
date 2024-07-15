@@ -56,7 +56,11 @@
             </tr>
             <tr>
                 <td>Móvil</td>
-                <td><input type="text" name="movil" value="<%= obj.getMovil() %>}"></td>
+                <td><input type="text" name="movil" value="<%= obj.getMovil() %>"></td>
+            </tr>
+            <tr>
+                <td>Mail</td>
+                <td><input type="text" name="email" value="<%= obj.getEmail() %>"></td>
             </tr>
             <%
                 }

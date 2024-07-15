@@ -19,7 +19,7 @@ public class ClienteDAO {
 
     public Cliente buscar(String dni) {
         Cliente c = new Cliente();
-        String sql = "Select Id_Cliente, DNI,Nombres,Direccion, '1' from t_cliente where Dni=" + dni;
+        String sql = "Select Id_Cliente, DNI,Nombres,Direccion, '1', Apellidos, Email from t_cliente where Dni=" + dni;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -27,9 +27,10 @@ public class ClienteDAO {
             while (rs.next()) {
                 c.setId(rs.getString(1));
                 c.setDni(rs.getString(2));
-                c.setNom(rs.getString(3));
+                c.setNom(rs.getString(3) + ' ' + rs.getString(6));
                 c.setDir(rs.getString(4));
                 c.setEs(rs.getString(5));
+                c.setEmail(rs.getString(7));
             }
             ps.close();
             con.close();

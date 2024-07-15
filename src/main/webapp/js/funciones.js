@@ -36,6 +36,8 @@ $("tr #deleteItem").click(function (e) {
         }
     });
 });
+
+
 function eliminar(idp) {
     var url = "Controlador?menu=NuevaVenta&accion=delete&id=" + idp;
     console.log("hol");
@@ -47,3 +49,4 @@ function eliminar(idp) {
         }
     });
 }
+

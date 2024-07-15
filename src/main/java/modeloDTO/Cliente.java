@@ -6,7 +6,7 @@ public class Cliente {
     String nom;
     String dir;
     String es;
-
+    private String Email;
     public Cliente() {
     }
 
@@ -18,6 +18,13 @@ public class Cliente {
         this.es = es;
     }
 
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
     public String getId() {
         return id;
     }
