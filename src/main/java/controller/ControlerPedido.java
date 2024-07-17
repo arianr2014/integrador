@@ -169,9 +169,9 @@ public class ControlerPedido extends HttpServlet {
             ArrayList<imprimirPedido> ListaDet = new ArrayList<>();
             String idPedido = request.getParameter("Id");
             // Consulta para obtener los detalles del pedido
-            String sqlDetalles = "SELECT Id_Pedido, Descripcion, A.Cantidad, A.Precio, TotalDeta FROM t_detalle_pedido A " +
+            String sqlDetalles = "SELECT idVentas, Descripcion, A.Cantidad, A.PrecioVenta, PrecioVenta FROM detalle_ventas A " +
                     "INNER JOIN t_producto B ON A.Id_Prod = B.Id_Prod " +
-                    "WHERE Id_Pedido = ?";
+                    "WHERE idVentas = ?";
             PreparedStatement psDetalles = conn.prepareStatement(sqlDetalles);
             psDetalles.setString(1, idPedido);
             ResultSet rsDetalles = psDetalles.executeQuery();
