@@ -255,8 +255,10 @@ public class ControlerCliente extends HttpServlet {
             }               
         }
         
-        response.sendRedirect("Clientes.jsp");       
-        
+       // response.sendRedirect("Clientes.jsp");
+        response.sendRedirect("ControlerCliente?Op=Listar");
+
+
     }
 
     @Override

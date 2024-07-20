@@ -11,7 +11,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b0c58730-a748-4f11-a252-c15affe27d42" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/HtmlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/HtmlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificarProducto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificarProducto.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/nuevoCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/nuevoCliente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/nuevoProducto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/nuevoProducto.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +89,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Smart Tomcat.Tomcat: PryIntegraMaven.executor": "Run",
     "Tomcat Server.Tomcat 10.1.24.executor": "Run",
-    "Tomcat Server.Tomcat 9.0.89.executor": "Debug",
+    "Tomcat Server.Tomcat 9.0.89.executor": "Run",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -112,7 +121,7 @@
       <recent name="D:\AREYES\UTP\2024 - 1\Integrador I sistemas\spring\PryIntegraMaven\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.24">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.89">
     <configuration name="Tomcat 10.1.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -347,6 +356,7 @@
       <workItem from="1720885608226" duration="23862000" />
       <workItem from="1720981855806" duration="1391000" />
       <workItem from="1721180676356" duration="2793000" />
+      <workItem from="1721490153537" duration="6786000" />
     </task>
     <servers />
   </component>
@@ -466,18 +476,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/config/HtmlUtils.java</url>
-          <line>59</line>
+          <line>84</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/config/HtmlUtils.java</url>
-          <line>68</line>
+          <line>93</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
-          <line>389</line>
+          <line>397</line>
           <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
+          <line>194</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

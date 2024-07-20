@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group d-flex">
                             <div class="col-sm-6 d-flex">
-                                <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo"> &nbsp;
+                                <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Dni"> &nbsp;
                                 <button type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info form-control">Buscar</button>
                             </div>
                             <div class="col-sm-6">
@@ -127,7 +127,7 @@
                                 <td>${list.getPrecio()}</td>
                                 <td>
                                     <input type="hidden" id="item1" value="${list.getIdproducto()}">
-                                    <input type="number" min="1" max="10" id="Cant" class=" form-control text-center" value="${list.getCantidad()}">
+                                    <input type="number" min="1" max="100" id="Cant" class=" form-control text-center" value="${list.getCantidad()}">
                                 </td>
                                 <td>${list.getSubtotal()}</td>
                                 <td class="text-center">

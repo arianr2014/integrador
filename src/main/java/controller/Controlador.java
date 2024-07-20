@@ -316,7 +316,7 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                     break;
                 case "delete":
-                    int idpd = Integer.parseInt(request.getParameter("id"));
+                    String idpd = request.getParameter("id");
                     for (int i = 0; i < lista.size(); i++) {
                         if (lista.get(i).getIdproducto().equals(idpd)) {
                             lista.remove(i);
@@ -331,13 +331,16 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("totalpagar", totalPagar);
                     request.setAttribute("lista", lista);
                     session.setAttribute("usuario", usuario);
+
+                    request.setAttribute("tipocomprobate", tipocomprobateS);
+                    request.setAttribute("metodopago", metodopagoS);
                     request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                     break;
                 case "updateCant":
                     try {
-                        int idpc = Integer.parseInt(request.getParameter("id"));
+                        String idpc = request.getParameter("id");
                         int canti = Integer.parseInt(request.getParameter("cantidad"));
-                        if (idpc != 0 && canti != 0) {
+                        if (idpc != "" && canti != 0) {
                             for (int i = 0; i < lista.size(); i++) {
                                 if (lista.get(i).getIdproducto().equals(idpc)) {
                                     lista.get(i).setCantidad(canti);
@@ -356,6 +359,11 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("totalpagar", totalPagar);
                     request.setAttribute("lista", lista);
                     session.setAttribute("usuario", usuario);
+
+                    request.setAttribute("tipocomprobate", tipocomprobateS);
+                    request.setAttribute("metodopago", metodopagoS);
+
+
                     request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
                     break;
 
@@ -413,7 +421,7 @@ public class Controlador extends HttpServlet {
                     mostrarmensajeok="1";
                     request.setAttribute("mostrarmensajeok", mostrarmensajeok);
                     String sbody=HtmlUtils.generateHtmlContent(v, lista);
-                    SendEmailUsingGMailSMTP.sendEmail(c.getEmail(), "Venta Realizada con Éxito # " + v.getNumserie(), sbody);
+                    SendEmailUsingGMailSMTP.sendEmail(c.getEmail(), "Resumen de Venta # " + v.getNumserie(), sbody);
                     lista = new ArrayList<>();
                     request.getRequestDispatcher("Controlador?menu=NuevaVenta&accion=ventanueva").forward(request, response);
 

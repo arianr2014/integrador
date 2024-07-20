@@ -44,6 +44,9 @@
                 <a class="nav-link" href="ControlerPedido?Op=Listar">Pedidos</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="https://app.powerbi.com/view?r=eyJrIjoiZTdiOGEzNjYtOGZiOS00NThkLTg1MzMtZDc5MWYxZDYwZmJhIiwidCI6ImI0YTQwNTQ1LTc3NzktNGIzOC1hZmY3LTFmMTczOGY4MDg0MCIsImMiOjR9" target="_blank">PowerBi</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="CerrarSesion">Cerrar Sesión</a>
             </li>
         </ul>
