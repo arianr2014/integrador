@@ -12,6 +12,7 @@ public class conexionBD {
     static String user="root";
     static String pass="ASdf1234";
     protected Connection conn=null;
+
     public conexionBD() {
         try{
             Class.forName(driver);
@@ -26,6 +27,17 @@ public class conexionBD {
             System.out.println("Falta Driver "+ex.getMessage());
         }
     }
+
+    public Connection Conexion(){
+        try {
+            Class.forName(driver);
+            conn=DriverManager.getConnection(url,user,pass);
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Error:"+e);
+        }
+        return conn;
+    }
+
     public Connection Connected(){
         return conn;
     }

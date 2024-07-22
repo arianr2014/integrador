@@ -19,7 +19,7 @@ public class pedido {
     private Date Fecha;
     private double SubTotal;
     private double TotalVenta;
-
+    private String NumeroSerie;
     public pedido() {
         this.Id_Pedido="";
         this.Id_Cliente="";
@@ -29,6 +29,17 @@ public class pedido {
         this.SubTotal=0;
         this.TotalVenta=0;
     }
+
+
+    //
+    public String getNumeroSerie() {
+        return NumeroSerie;
+    }
+
+    public void setNumeroSerie(String NumeroSerie) {
+        this.NumeroSerie = NumeroSerie;
+    }
+
 
     public String getId_Pedido() {
         return Id_Pedido;

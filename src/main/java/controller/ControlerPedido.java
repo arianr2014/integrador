@@ -76,7 +76,24 @@ public class ControlerPedido extends HttpServlet {
                 consultarPedido(request, response, conn, ListaDet);
                 break;
             case "Eliminar":
-                // Implementación para eliminar
+                try{
+                    String Id=request.getParameter("Id");
+                    String sql="delete from detalle_ventas where IdVentas=?";
+                    ps= conn.prepareStatement(sql);
+                    ps.setString(1, Id);
+                    ps.executeUpdate();
+
+                    sql="delete from ventas where IdVentas=?";
+                    ps= conn.prepareStatement(sql);
+                    ps.setString(1, Id);
+                    ps.executeUpdate();
+                    response.sendRedirect("ControlerPedido?Op=Listar");
+
+                }catch(SQLException ex){
+                    System.out.println("Error de SQL..."+ex.getMessage());
+                } finally{
+                    conBD.Discconet();
+                }
                 break;
             case "Nuevo":
                 //request.getRequestDispatcher("nuevoPedido.jsp").forward(request, response);
@@ -204,8 +221,8 @@ public class ControlerPedido extends HttpServlet {
             throws ServletException, IOException {
         try {
             String sql = "SELECT IdVentas, A.Id_Cliente, B.Apellidos, B.Nombres, A.FechaVentas, " +
-                         "A.Monto, A.Monto FROM ventas A " +
-                         "INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente";
+                         "A.Monto, A.Monto , A.NumeroSerie FROM ventas A " +
+                         "INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente order by IdVentas desc";
 
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -219,6 +236,7 @@ public class ControlerPedido extends HttpServlet {
                 Pedido.setFecha(rs.getDate(5));
                 Pedido.setSubTotal(rs.getDouble(6));
                 Pedido.setTotalVenta(rs.getDouble(7));
+                Pedido.setNumeroSerie(rs.getString(8));
                 Lista.add(Pedido);
             }
             request.setAttribute("Lista", Lista);
@@ -298,10 +316,14 @@ public class ControlerPedido extends HttpServlet {
         try {
             String startDate = request.getParameter("startDate");
             String endDate = request.getParameter("endDate");
-            String sql = "SELECT Id_Pedido, A.Id_Cliente, B.Apellidos, B.Nombres, A.Fecha, " +
-                         "A.SubTotal, A.TotalVenta FROM t_pedido A " +
-                         "INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente " +
-                         "WHERE A.Fecha BETWEEN ? AND ?";
+
+
+            String sql = "SELECT IdVentas, A.Id_Cliente, B.Apellidos, B.Nombres, A.FechaVentas, " +
+                          "A.Monto, A.Monto , A.NumeroSerie FROM ventas A " +
+                           "INNER JOIN t_cliente B ON A.Id_Cliente = B.Id_Cliente WHERE A.FechaVentas BETWEEN ? AND ?  order by IdVentas desc";
+
+
+
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setDate(1, Date.valueOf(startDate));
             ps.setDate(2, Date.valueOf(endDate));
@@ -315,6 +337,7 @@ public class ControlerPedido extends HttpServlet {
                 Pedido.setFecha(rs.getDate(5));
                 Pedido.setSubTotal(rs.getDouble(6));
                 Pedido.setTotalVenta(rs.getDouble(7));
+                Pedido.setNumeroSerie(rs.getString(8));
                 Lista.add(Pedido);
             }
             request.setAttribute("Lista", Lista);

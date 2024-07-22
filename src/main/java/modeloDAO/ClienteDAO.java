@@ -1,6 +1,6 @@
 package modeloDAO;
 
-import config.Conexion;
+import conexion.conexionBD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import modeloDTO.Cliente;
 
 public class ClienteDAO {
 
-    Conexion cn = new Conexion();
+    conexionBD cn = new conexionBD();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;

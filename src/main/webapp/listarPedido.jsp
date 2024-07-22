@@ -42,7 +42,7 @@
     
     <table>
         <tr>
-            <th>Id Pedido</th>
+            <th># Serie</th>
             <th>Fecha</th>
             <th>Apellidos</th>
             <th>Nombres</th>
@@ -51,7 +51,7 @@
         </tr>
         <c:forEach var="campo" items="${Lista}">
             <tr>
-               <td>${campo.getId_Pedido()}</td>
+               <td>${campo.getNumeroSerie()}</td>
                <td>${campo.getFecha()}</td>
                <td>${campo.getApellidos()}</td>
                <td>${campo.getNombres()}</td>

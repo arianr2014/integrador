@@ -19,7 +19,7 @@
         <div class="col-lg-5 parte01">
             <div class="card">
 
-                <form action="Controlador?menu=NuevaVenta" method="POST">
+                <form id="ventaForm"  action="Controlador?menu=NuevaVenta" method="POST">
                     <div class="card-body">
                         <!--DATOS DEL PRODUCTO-->
                         <div class="form-group">
@@ -70,28 +70,29 @@
                         </div>
                         <div class="form-group d-flex">
                             <div class="col-sm-6 d-flex">
-                                <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo"> &nbsp;
+                                <input type="text" id="codigoproducto" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo"> &nbsp;
                                 <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info form-control">Buscar</button>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" name="nomproducto" value="${producto.getNom()}" placeholder="Datos Producto" class="form-control">
+                                <input type="text" id="nomproducto"  name="nomproducto" value="${producto.getNom()}" placeholder="Datos Producto" class="form-control">
                             </div>
                         </div>
                         <div class="form-group d-flex">
                             <div class="col-sm-6 d-flex">
-                                <input type="text" name="precio" value="${producto.getPre()}" class="form-control" placeholder="S/.0.00">
+                                <input type="text" id="precio"  name="precio" value="${producto.getPre()}" class="form-control" placeholder="S/.0.00">
                             </div>
                             <div class="col-sm-3">
-                                <input type="number" value="1" name="cant" placeholder="" class="form-control">
+                                <input type="number" id="cant"  value="1" name="cant" placeholder="" class="form-control">
                             </div>
                             <div class="col-sm-3">
-                                <input type="text" name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control">
+                                <input type="text" id="stock"  name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control">
                             </div>
                         </div>
                         <!--BOTON AGREGAR PRODUCTO AL REGISTRO-->
                         <div class="form-group">
                             <div class="col-sm">
-                                <button type="submit" name="accion" value="Agregar" class="btn btn-outline-primary">Agregar Producto</button>
+                               <button type="submit"  name="accion" value="Agregar" class="btn btn-outline-primary">Agregar Producto</button>
+
                             </div>
                         </div>
                     </div>
@@ -196,6 +197,26 @@
                 icon: "success",
             })
         }
+
+
+
+
+        // Validación del formulario antes de agregar producto
+        document.getElementById("agregarProductoBtn").addEventListener("click", function() {
+            var codigoproducto = document.getElementById("codigoproducto").value;
+            var nomproducto = document.getElementById("nomproducto").value;
+            var precio = document.getElementById("precio").value;
+            var cant = document.getElementById("cant").value;
+            var stock = document.getElementById("stock").value;
+
+            if (!codigoproducto || !nomproducto || !precio || !cant || !stock) {
+                alert("Todos los campos de datos del producto son obligatorios.");
+            } else {
+                document.getElementById("ventaForm").submit();
+            }
+        });
+
+
     });
 
 
