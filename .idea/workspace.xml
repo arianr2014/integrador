@@ -9,19 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0c58730-a748-4f11-a252-c15affe27d42" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/conexion/conexionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conexion/conexionBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDAO/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDAO/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDAO/EmpleadoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDAO/EmpleadoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDAO/ProductoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDAO/ProductoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modeloDAO/VentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modeloDAO/VentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/RegistrarVenta.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarPedido.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="b0c58730-a748-4f11-a252-c15affe27d42" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +80,7 @@
     &quot;Tomcat Server.Tomcat 9.0.89.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat9.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Anibal&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/UTP/integrador&quot;,
@@ -123,7 +111,7 @@
       <recent name="D:\AREYES\UTP\2024 - 1\Integrador I sistemas\spring\PryIntegraMaven\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat9">
+  <component name="RunManager" selected="Smart Tomcat.Unnamed">
     <configuration name="Tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.91" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -244,6 +232,13 @@
       <option name="contextPath" value="/PryIntegraMaven" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.91" />
+          <option name="path" value="$USER_HOME$/Downloads/apache-tomcat-9.0.91" />
+          <option name="version" value="9.0.91.0" />
+        </TomcatInfo>
+      </option>
       <option name="vmOptions" value="" />
       <module name="PryIntegraMaven" />
       <method v="2">
@@ -253,16 +248,7 @@
     <list>
       <item itemvalue="Smart Tomcat.Unnamed" />
       <item itemvalue="Smart Tomcat.Tomcat: PryIntegraMaven" />
-      <item itemvalue="Tomcat Server.Tomcat9" />
     </list>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -351,22 +337,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
-          <line>129</line>
+          <line>141</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
-          <line>169</line>
+          <line>181</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
-          <line>173</line>
+          <line>185</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
-          <line>157</line>
+          <line>169</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -396,7 +382,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
-          <line>32</line>
+          <line>35</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -411,52 +397,52 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
-          <line>397</line>
+          <line>405</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
-          <line>188</line>
+          <line>200</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
-          <line>208</line>
+          <line>220</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/ControlerPedido.java</url>
-          <line>211</line>
+          <line>223</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/Controlador.java</url>
-          <line>423</line>
+          <line>431</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
-          <line>12</line>
+          <line>11</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
-          <line>45</line>
+          <line>49</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
-          <line>23</line>
+          <line>26</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
-          <line>34</line>
+          <line>37</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sendemail/SendEmailUsingGMailSMTP.java</url>
-          <line>37</line>
+          <line>40</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
